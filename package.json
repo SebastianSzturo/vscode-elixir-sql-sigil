@@ -1,0 +1,28 @@
+{
+    "name": "vscode-elixir-sql-sigil",
+    "displayName": "vscode-elixir-sql-sigil",
+    "description": "Syntax highlighting support for ~Q SQL sigils.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "elixir-sql",
+            "aliases": ["elixir-sql"],
+            "extensions": [""],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "elixir-sql",
+            "scopeName": "source.elixir.sql",
+            "path": "./syntaxes/elixir-sql.json",
+            "injectTo": [
+                "source.elixir"
+            ]
+        }]
+    }
+}

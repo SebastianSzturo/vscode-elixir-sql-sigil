@@ -1,0 +1,112 @@
+{
+  "injectionSelector": "L:source.elixir -comment -text -string",
+  "name": "elixir-heex",
+  "patterns": [
+    {
+      "comment": "SQL sigil with heredoc (double quotes)",
+      "name": "text.html.heex",
+      "begin": "\\s?(~Q\"\"\")$",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "end": "^\\s*(\"\"\"[a-z]*)$",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "comment": "SQL sigil with double quotes",
+      "name": "text.html.heex",
+      "begin": "~Q\\\"",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "end": "\\\"[a-z]*",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "comment": "SQL sigil with square brackets",
+      "name": "text.html.heex",
+      "begin": "~Q\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "end": "\\][a-z]*",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "comment": "SQL sigil with parentheses",
+      "name": "text.html.heex",
+      "begin": "~Q\\(",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "end": "\\)[a-z]*",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "comment": "SQL sigil with curly brackets",
+      "name": "text.html.heex",
+      "begin": "~Q\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "end": "\\}[a-z]*",
+      "endCaptures": {
+        "0": {
+          "name": "string.quoted.double.heredoc.elixir"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    }
+  ],
+  "scopeName": "source.elixir.sql"
+}
